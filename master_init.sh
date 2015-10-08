@@ -1,6 +1,7 @@
 #!/bin/sh
 /usr/bin/ssh-keygen -A || exit $?
 /usr/sbin/sshd
-/usr/bin/salt-master -l debug -d
-while [ 1 ]; do /usr/bin/salt-key -y -a minion; sleep 30; done
+mkdir -vp /etc/salt/master.d
+cp -v /root/custom.conf /etc/salt/master.d/
+/usr/bin/salt-master -l debug
 

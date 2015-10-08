@@ -17,4 +17,5 @@ RUN yum clean expire-cache && \
 ADD ./minion_init.sh /root/
 ADD ./master_init.sh /root/
 ADD ./saltkey.pub /root/.ssh/authorized_keys
+ADD ./custom.conf /root/
 
