@@ -1,0 +1,19 @@
+master:
+  image: jhazelwo/docksalt
+  ports:
+    - "22"
+    - "4506"
+  hostname: salt
+  command: /root/master_init.sh
+  container_name: salt_master
+minion:
+  image: jhazelwo/docksalt
+  links:
+    - master
+  ports:
+    - "22"
+    - "4506"
+  hostname: minion
+  command: /root/minion_init.sh
+  container_name: salt_minion
+
