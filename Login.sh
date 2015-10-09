@@ -1,6 +1,6 @@
 #!/bin/sh
 
-container=`docker ps -a|grep ${1}_init|awk '{print $1}'`
+container=`docker ps -a|grep salt_${1}|awk '{print $1}'`
 
 addr=`docker inspect -f "{{.NetworkSettings.IPAddress}}" ${container}` || exit $?
 

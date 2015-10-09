@@ -14,8 +14,7 @@ RUN yum clean expire-cache && \
  rpm --import /root/SALTSTACK-GPG-KEY.pub && \
  yum install -y salt-master salt-minion salt-ssh salt-syndic salt-cloud virt-what openssh-server
 
-ADD ./minion_init.sh /root/
-ADD ./master_init.sh /root/
 ADD ./saltkey.pub /root/.ssh/authorized_keys
 ADD ./custom.conf /root/
+ADD ./init.sh /root/
 
