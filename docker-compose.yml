@@ -4,7 +4,8 @@ master:
   command: /root/init.sh
   container_name: salt_master
   volumes:
-    - ./srv:/srv/salt
+    - ./srv_salt:/srv/salt
+    - ./srv_pillar:/srv/pillar
 minion:
   image: jhazelwo/docksalt
   links:

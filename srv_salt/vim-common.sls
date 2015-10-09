@@ -1,0 +1,3 @@
+vim-common:
+  pkg.installed: []
+

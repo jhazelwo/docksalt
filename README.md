@@ -1,6 +1,7 @@
 # DockSalt
-1. ./Build.sh
-2. docker-compose run minion
-3. ./Login.sh master
-4. ./Login.sh miniion
+1. ./Cleanup.sh
+2. ./Build.sh
+3. ./Go.sh
+4. ./Login.sh master
+5. ./Login.sh miniion
 

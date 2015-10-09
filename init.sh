@@ -1,8 +1,5 @@
 #!/bin/sh
 #
-#
-#
-#
 /usr/bin/ssh-keygen -A || exit $?
 /usr/sbin/sshd || exit $?
 
@@ -18,3 +15,4 @@ case `hostname` in
     /usr/bin/salt-minion -l info
   ;;
 esac
+
