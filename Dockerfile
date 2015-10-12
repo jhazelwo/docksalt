@@ -5,6 +5,7 @@ MAINTAINER jhazelwo@github
 # A salt machine, Centos7, can be master or minion
 #
 
+## https://docs.saltstack.com/en/latest/topics/installation/rhel.html#installation-from-the-saltstack-repository
 ADD ./saltstack.repo /etc/yum.repos.d/
 ADD ./SALTSTACK-GPG-KEY.pub /root/
 
@@ -12,7 +13,8 @@ RUN yum clean expire-cache && \
  yum update -y && \
  yum install -y wget && \
  rpm --import /root/SALTSTACK-GPG-KEY.pub && \
- yum install -y salt-master salt-minion salt-ssh salt-syndic salt-cloud virt-what openssh-server
+ yum install -y salt-master salt-minion salt-ssh salt-syndic salt-cloud virt-what openssh-server python-libnacl
+
 
 ADD ./saltkey.pub /root/.ssh/authorized_keys
 ADD ./custom.conf /root/
