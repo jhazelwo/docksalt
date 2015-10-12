@@ -6,6 +6,7 @@ master:
   volumes:
     - ./srv_salt:/srv/salt
     - ./srv_pillar:/srv/pillar
+    - ./srv_reactor:/srv/reactor
 minion:
   image: jhazelwo/docksalt
   links:
