@@ -7,7 +7,8 @@ hostname > /etc/salt/minion_id || exit $?
 case `hostname` in
   'salt')
     mkdir -vp /etc/salt/master.d
-    cp -v /root/custom.conf /etc/salt/master.d/
+    mv -v /root/custom.conf /etc/salt/master.d/
+    chmod -v 0600 /root/.saltrc
     /usr/bin/salt-master --log-file-level debug
   ;;
   *)

@@ -6,8 +6,8 @@ MAINTAINER jhazelwo@github
 #
 
 ## https://docs.saltstack.com/en/latest/topics/installation/rhel.html#installation-from-the-saltstack-repository
-ADD ./saltstack.repo /etc/yum.repos.d/
-ADD ./SALTSTACK-GPG-KEY.pub /root/
+ADD ./files/saltstack.repo /etc/yum.repos.d/
+ADD ./files/SALTSTACK-GPG-KEY.pub /root/
 
 RUN yum clean expire-cache && \
  yum update -y && \
@@ -15,8 +15,8 @@ RUN yum clean expire-cache && \
  rpm --import /root/SALTSTACK-GPG-KEY.pub && \
  yum install -y salt-master salt-minion salt-ssh salt-syndic salt-cloud virt-what openssh-server python-libnacl
 
-
-ADD ./saltkey.pub /root/.ssh/authorized_keys
-ADD ./custom.conf /root/
-ADD ./init.sh /root/
+ADD ./.ssh/saltkey.pub /root/.ssh/authorized_keys
+ADD ./files/custom.conf /root/
+ADD ./files/saltrc /root/.saltrc
+ADD ./files/init.sh /root/
 
