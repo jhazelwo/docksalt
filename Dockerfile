@@ -13,9 +13,8 @@ RUN yum clean expire-cache && \
  yum update -y && \
  yum install -y wget && \
  rpm --import /root/SALTSTACK-GPG-KEY.pub && \
- yum install -y salt-master salt-minion salt-ssh salt-syndic salt-cloud virt-what openssh-server python-libnacl
+ yum install -y salt-master salt-minion salt-ssh salt-syndic salt-cloud virt-what python-libnacl
 
-ADD ./.ssh/saltkey.pub /root/.ssh/authorized_keys
 ADD ./files/custom.conf /root/
 ADD ./files/saltrc /root/.saltrc
 ADD ./files/init.sh /root/

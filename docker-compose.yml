@@ -7,8 +7,11 @@ master:
     - ./srv:/srv
 minion:
   image: jhazelwo/docksalt
-  links:
-    - master
   hostname: minion
   command: /root/init.sh
+# this container_name is ignored since master uses an explicit name already
+# https://github.com/docker/compose/issues/2061
+  container_name: salt_minion
+  links:
+    - master
 

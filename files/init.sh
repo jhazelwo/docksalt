@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-/usr/bin/ssh-keygen -A || exit $?
-/usr/sbin/sshd || exit $?
 hostname > /etc/salt/minion_id || exit $?
 
 case `hostname` in
